@@ -15,5 +15,15 @@ window.onscroll = () => {
             document.querySelector('header nav a[href*="' + id + '"]').classList.add('active');
         }
     });
-
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    let menuIcon = document.getElementById('menu_icon');
+    let navbar = document.querySelector('.navbar');
+
+    menuIcon.addEventListener('click', () => {
+        // Alternar a classe 'responsive-navbar' na barra de navegação
+        navbar.classList.toggle('responsive-navbar');
+    });
+});
+
