@@ -382,29 +382,46 @@ span{
     display: none; 
 }
 
-
-@media screen and (max-width: 768px) {
-    #menu_icon {
-        display: block;
-
+@media only screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        display: none; 
     }
 
-    .navbar {
-        display: none; 
+    .navbar.show {
+        display: flex; 
+    }
+
+    .navbar a {
+        margin: 1rem 0;
+    }
+
+    #menu_icon {
+        display: block;
     }
 
     .responsive-navbar {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        height: 25vh;
         position: absolute;
-        top: 60px; 
+        top: 60px;
         left: 0;
         right: 0;
-        background-color: #282e36;
+        background-color: #383838;
         z-index: 1;
+        height: 0; 
+        overflow: hidden;
+        transition: height 0.3s ease; 
+    }
+
+    .responsive-navbar.show {
+        height: auto; 
+    }
+
+    .navbar #menu_icon {
+        display: none;
     }
 }
+
 
